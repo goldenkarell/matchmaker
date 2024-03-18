@@ -93,6 +93,7 @@
         <button onclick="calculateCompatibility()">Calculate Compatibility</button>
         <br /><br /><br />
         <p id="Compatibility"></p>
+        <p id="Thresholdresponse"></p>
     </div>
     <script>
         console.log("Karl's Matchmaker for the Web")
@@ -162,6 +163,16 @@
 
             document.getElementById("Compatibility").innerHTML = "Your Compatability Score is " 
             +totalCompatibility+"%"
+
+            let thresholdresponse;
+            if (totalCompatibility < 50) {
+                thresholdresponse = "Nah bruh.";
+            }   else if (totalCompatibility < 75) {
+                thresholdresponse = "I mean, hmu.";
+            }   else {
+                thresholdresponse = "Definitely hmu."
+            }
+            document.getElementById("Thresholdresponse").innerHTML = thresholdresponse;
         }
     </script>
     <br /><br /><br />
